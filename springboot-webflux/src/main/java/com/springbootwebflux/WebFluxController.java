@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/user")
 public class WebFluxController {
 
-    Map<Long,User> map = new HashMap<Long,User>();
+    private Map<Long,User> map = new HashMap<Long,User>();
     @PostConstruct
     public void init(){
         map.put(1L,new User(1,"admin","admin"));
