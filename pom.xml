@@ -12,6 +12,7 @@
 
   <modules>
     <module>springboot-webflux</module>
+    <module>springboot-webflux-functional</module>
   </modules>
 
   <parent>
