@@ -1,4 +1,4 @@
-package com.springbootwebflux;
+package com.springbootwebflux.model;
 
 /**
  * @author WXY
