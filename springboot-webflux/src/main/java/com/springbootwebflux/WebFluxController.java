@@ -16,14 +16,14 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/user")
 public class WebFluxController {
 
-    private Map<Long,User> map = new HashMap<Long,User>();
+    private Map<Long,User> map = new HashMap<Long,User>(10);
     @PostConstruct
     public void init(){
         map.put(1L,new User(1,"admin","admin"));
         map.put(2L,new User(1,"admin2","admin2"));
         map.put(3L,new User(1,"admin3","admin3"));
     }
-    @GetMapping("/getall")
+    @GetMapping("/getAll")
     @CrossOrigin
     public Flux<User> getAllUser(){
         return Flux.fromIterable(map.entrySet().stream().map(Map.Entry::getValue)
