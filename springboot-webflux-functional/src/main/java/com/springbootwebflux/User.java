@@ -1,5 +1,8 @@
 package com.springbootwebflux;
 
+/**
+ * @author WXY
+ */
 public class User {
     private Integer uid;
     private String name;
