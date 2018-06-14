@@ -4,24 +4,24 @@ package com.springbootwebflux.model;
  * @author WXY
  */
 public class User {
-    private Integer uid;
+    private Long uid;
     private String name;
     private String psw;
 
-    public Integer getUid() {
+    public Long getUid() {
         return uid;
     }
 
     public User() {
     }
 
-    public User(Integer uid, String name, String psw) {
+    public User(Long uid, String name, String psw) {
         this.uid = uid;
         this.name = name;
         this.psw = psw;
     }
 
-    public void setUid(Integer uid) {
+    public void setUid(Long uid) {
         this.uid = uid;
     }
 
