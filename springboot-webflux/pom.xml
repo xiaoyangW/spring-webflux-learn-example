@@ -5,7 +5,6 @@
 
 	<artifactId>springboot-webflux</artifactId>
 	<packaging>jar</packaging>
-
 	<parent>
 		<groupId>com.spring.webflux</groupId>
 		<artifactId>SpringWebfluxLearn</artifactId>

@@ -26,6 +26,7 @@ public class UserHandler {
         Flux<User> allUser = userService.getAllUser();
         return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON_UTF8).body(allUser,User.class);
     }
+
     public Mono<ServerResponse> getUserById(ServerRequest serverRequest){
         //获取url上的id
         Long uid = Long.valueOf(serverRequest.pathVariable("id"));
