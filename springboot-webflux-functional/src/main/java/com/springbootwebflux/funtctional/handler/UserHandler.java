@@ -17,20 +17,20 @@ import reactor.core.publisher.Mono;
 public class UserHandler {
 
     private IUserService userService;
-    @Autowired
+
     public UserHandler(IUserService userService) {
         this.userService = userService;
     }
 
     public Mono<ServerResponse> getAllUser(ServerRequest serverRequest){
         Flux<User> allUser = userService.getAllUser();
-        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON_UTF8).body(allUser,User.class);
+        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(allUser,User.class);
     }
 
     public Mono<ServerResponse> getUserById(ServerRequest serverRequest){
         //获取url上的id
         Long uid = Long.valueOf(serverRequest.pathVariable("id"));
         Mono<User> user = userService.getUserById(uid);
-        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON_UTF8).body(user,User.class);
+        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(user,User.class);
     }
 }

@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * @author WXY
  */
-@Service
+@Repository
 public class UserServiceImpl implements IUserService {
 
     private Map<Long,User> map = new HashMap<Long,User>(10);

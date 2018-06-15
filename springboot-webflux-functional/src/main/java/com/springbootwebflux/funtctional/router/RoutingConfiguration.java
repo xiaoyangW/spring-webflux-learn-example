@@ -17,7 +17,6 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class RoutingConfiguration {
 
     @Bean
-    @Autowired
     public RouterFunction<ServerResponse> monoRouterFunction(UserHandler userHandler){
         return route(GET("/api/user").and(accept(MediaType.APPLICATION_JSON)),userHandler::getAllUser)
                 .andRoute(GET("/api/user/{id}").and(accept(MediaType.APPLICATION_JSON)),userHandler::getUserById);
