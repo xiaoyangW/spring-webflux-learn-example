@@ -17,7 +17,7 @@ import reactor.core.publisher.Mono;
 public class UserHandler {
 
     private IUserService userService;
-
+    @Autowired
     public UserHandler(IUserService userService) {
         this.userService = userService;
     }
@@ -33,4 +33,10 @@ public class UserHandler {
         Mono<User> user = userService.getUserById(uid);
         return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(user,User.class);
     }
+
+    public Mono<ServerResponse> saveUser(ServerRequest serverRequest){
+        Mono<User> user = serverRequest.bodyToMono(User.class);
+        return ServerResponse.ok().build(userService.saveUser(user));
+    }
+
 }

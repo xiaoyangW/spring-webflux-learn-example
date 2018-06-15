@@ -19,7 +19,8 @@ public class RoutingConfiguration {
     @Bean
     public RouterFunction<ServerResponse> monoRouterFunction(UserHandler userHandler){
         return route(GET("/api/user").and(accept(MediaType.APPLICATION_JSON)),userHandler::getAllUser)
-                .andRoute(GET("/api/user/{id}").and(accept(MediaType.APPLICATION_JSON)),userHandler::getUserById);
+                .andRoute(GET("/api/user/{id}").and(accept(MediaType.APPLICATION_JSON)),userHandler::getUserById)
+                .andRoute(POST("/api/save").and(accept(MediaType.APPLICATION_JSON)),userHandler::saveUser);
     }
 
 }
